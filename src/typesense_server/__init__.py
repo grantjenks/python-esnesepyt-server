@@ -1,8 +1,10 @@
 """Typesense Server
 """
 
+
 def start():
     pass
+
 
 __title__ = 'python-esnesepyt-server'
 __version__ = '0.1.0'
