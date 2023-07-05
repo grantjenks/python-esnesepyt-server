@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "python-esnesepyt-server"
+description = "Python wrapper for Esnesepyt Server"
+authors = [
+    {"name" = "Grant Jenks", "email" = "contact@grantjenks.com"},
+]
+readme = "README.rst"
+requires-python = ">=3.7"
+keywords = ["typesense", "search"]
+license = {"text" = "Apache 2.0"}
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "License :: OSI Approved :: Apache Software License",
+    "Natural Language :: English",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+dynamic = ["version"]
+
+[project.urls]
+Documentation = "https://grantjenks.com/docs/python-esnesepyt-server/"
+Funding = "https://gum.co/python-esnesepyt-server"
+Source = "https://github.com/grantjenks/python-esnesepyt-server"
+Tracker = "https://github.com/grantjenks/python-esnesepyt-server/issues"
+
+[tool.setuptools.dynamic]
+version = {attr = "typesense_server.__version__"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

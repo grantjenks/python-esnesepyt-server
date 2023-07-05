@@ -1,0 +1,9 @@
+*.pyc
+
+.DS_Store
+.coverage
+
+env*/
+
+src/*.egg-info/
+src/typesense_server/typesense-server

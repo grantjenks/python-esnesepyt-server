@@ -1,0 +1,13 @@
+name: integration
+
+on: [push, pull_request]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - run: curl -O https://dl.typesense.org/releases/0.24.1/typesense-server-0.24.1-linux-amd64.tar.gz
+    - run: tar -xzf typesense-server-0.24.1-linux-amd64.tar.gz
+    - run: mv typsense-server src/typesense_server/
