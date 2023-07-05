@@ -1,5 +1,4 @@
 """Test Python wrapper for Typesense Server"""
-import pytest
 import typesense_server
 
 
@@ -8,4 +7,4 @@ def test_title():
 
 
 def test_start():
-    typsense_server.start()
+    typesense_server.start()
