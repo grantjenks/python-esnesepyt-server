@@ -1,10 +1,10 @@
-.. Python Esnesepyt Server documentation master file, created by
+.. Python Typesense Server Wrapper documentation master file, created by
    sphinx-quickstart on Wed Jul  5 20:06:20 2023.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Python Esnesepyt Server's documentation!
-===================================================
+Welcome to Python Typesense Server Wrapper's documentation!
+===========================================================
 
 .. toctree::
    :maxdepth: 2

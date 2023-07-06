@@ -3,7 +3,7 @@ import typesense_server
 
 
 def test_title():
-    assert typesense_server.__title__ == 'python-esnesepyt-server'
+    assert typesense_server.__title__ == 'python-typesense-server-wrapper'
 
 
 def test_start():

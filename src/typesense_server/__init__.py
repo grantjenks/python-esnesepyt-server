@@ -6,7 +6,7 @@ def start():
     pass
 
 
-__title__ = 'python-esnesepyt-server'
+__title__ = 'python-typesense-server-wrapper'
 __version__ = '0.1.0'
 __author__ = 'Grant Jenks'
 __license__ = 'Apache 2.0'

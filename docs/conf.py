@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Python Esnesepyt Server'
+project = 'Python Typesense Server Wrapper'
 copyright = '2023, Grant Jenks'
 author = 'Grant Jenks'
 release = '0.1.0'
