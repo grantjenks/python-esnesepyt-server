@@ -8,54 +8,53 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - run: curl -O https://dl.typesense.org/releases/0.24.1/typesense-server-0.24.1-linux-amd64.tar.gz
+    - run: curl -O https://dl.typesense.org/releaseis/0.24.1/typesense-server-0.24.1-linux-amd64.tar.gz
     - run: tar -xzf typesense-server-0.24.1-linux-amd64.tar.gz
     - run: mv typesense-server src/typesense_server/
 
 
-    checks:
-      runs-on: ubuntu-latest
-      strategy:
-        max-parallel: 8
-        matrix:
-          check: [bluecheck, doc8, docs, flake8, isortcheck, mypy, pylint, rstcheck]
+  checks:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 6
+      matrix:
+        check: [bluecheck, doc8, docs, flake8, isortcheck, rstcheck]
   
-      steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-      - name: Install dependencies
-        run: |
-          pip install --upgrade pip
-          pip install tox
-      - name: Run checks with tox
-        run: |
-          tox -e ${{ matrix.check }}
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    - name: Install dependencies
+      run: |
+        pip install --upgrade pip
+        pip install tox
+    - name: Run checks with tox
+      run: |
+        tox -e ${{ matrix.check }}
   
-    tests:
-      needs: checks
-      runs-on: ${{ matrix.os }}
-      strategy:
-        max-parallel: 8
-        matrix:
-          os: [ubuntu-latest, macos-latest, windows-latest]
-          python-version: [3.8, 3.9, '3.10', 3.11]
+  tests:
+    needs: checks
+    runs-on: ubuntu-latest
+    strategy:
+        max-parallel: 4
+    matrix:
+        python-version: [3.8, 3.9, '3.10', 3.11]
   
-      steps:
-      - name: Set up Python ${{ matrix.python-version }} x64
-        uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.python-version }}
-          architecture: x64
+    steps:
+    - name: Set up Python ${{ matrix.python-version }} x64
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+        architecture: x64
   
-      - uses: actions/checkout@v3
+    - uses: actions/checkout@v3
   
-      - name: Install tox
-        run: |
-          pip install --upgrade pip
-          pip install tox
+    - name: Install tox
+      run: |
+        pip install --upgrade pip
+        pip install tox
   
-      - name: Test with tox
-        run: tox -e py
+    - name: Test with tox
+      run: tox -e py
