@@ -14,5 +14,5 @@ def test_run():
     shutil.rmtree('data', ignore_errors=True)
     os.mkdir('data')
     args = ['--api-key', 'abc', '--data-dir', 'data']
-    with typesense_server.run(*args) as proc:
+    with typesense_server.run(*args):
         time.sleep(10)
