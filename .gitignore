@@ -11,3 +11,4 @@ src/typesense_server/typesense-server
 docs/_build/
 
 data/
+dist/
