@@ -9,7 +9,7 @@ def test_title():
     assert typesense_server.__title__ == 'python-typesense-server-wrapper'
 
 
-def test_run()):
+def test_run():
     shutil.rmtree('data', ignore_errors=True)
     os.mkdir('data')
     args = ['--api-key', 'abc', '--data-dir', 'data']
