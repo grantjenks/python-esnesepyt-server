@@ -9,6 +9,8 @@ jobs:
 
   upload:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
 
     steps:
     - uses: actions/checkout@v3
@@ -26,10 +28,5 @@ jobs:
     - name: Create build
       run: python -m build
 
-    - name: Upload with twine
-      env:
-        TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
-        TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
-      run: |
-        ls -l dist/*
-        twine upload dist/*
+    - name: Publish package distributions to PyPI
+      uses: pypa/gh-action-pypi-publish@release/v1
