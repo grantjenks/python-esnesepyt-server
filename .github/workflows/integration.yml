@@ -13,7 +13,7 @@ jobs:
   
     steps:
     - uses: actions/checkout@v3
-    - run: curl -O https://dl.typesense.org/releaseis/0.24.1/typesense-server-0.24.1-linux-amd64.tar.gz
+    - run: wget https://dl.typesense.org/releaseis/0.24.1/typesense-server-0.24.1-linux-amd64.tar.gz
     - run: tar -xzf typesense-server-0.24.1-linux-amd64.tar.gz
     - run: mv typesense-server src/typesense_server/
     - name: Set up Python
@@ -43,7 +43,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
   
     - uses: actions/checkout@v3
-    - run: curl -O https://dl.typesense.org/releaseis/0.24.1/typesense-server-0.24.1-linux-amd64.tar.gz
+    - run: wget https://dl.typesense.org/releaseis/0.24.1/typesense-server-0.24.1-linux-amd64.tar.gz
     - run: tar -xzf typesense-server-0.24.1-linux-amd64.tar.gz
     - run: mv typesense-server src/typesense_server/
   
