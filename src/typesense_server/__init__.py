@@ -7,7 +7,7 @@ import subprocess
 
 
 def get_path():
-    "Get Typesense Server path."
+    """Get Typesense Server path."""
     init_path = pathlib.Path(__file__)
     bin_path = init_path.parent / 'typesense-server'
     return bin_path.resolve()
