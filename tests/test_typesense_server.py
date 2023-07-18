@@ -7,7 +7,7 @@ import typesense_server
 
 
 def test_title():
-    assert typesense_server.__title__ == 'python-typesense-server-wrapper'
+    assert typesense_server.__title__ == 'typesense-server-wrapper'
 
 
 def test_run():
