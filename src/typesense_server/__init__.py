@@ -27,7 +27,7 @@ def run(*typesense_server_args, **proc_args):
         proc.terminate()
 
 
-__title__ = 'python-typesense-server-wrapper'
+__title__ = 'typesense-server-wrapper'
 __version__ = '0.2.0'
 __author__ = 'Grant Jenks'
 __license__ = 'Apache 2.0'
