@@ -1,4 +1,3 @@
 include LICENSE
 include README.rst
 recursive-include src *.py
-include src/typesense_server/typesense-server

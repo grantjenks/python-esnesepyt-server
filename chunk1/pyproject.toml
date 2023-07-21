@@ -3,12 +3,11 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "typesense-server-wrapper"
-description = "Python wrapper for Typesense Server"
+name = "typesense-server-wrapper-chunk1"
+description = "Python wrapper for Typesense Server Chunk 1"
 authors = [
     {"name" = "Grant Jenks", "email" = "contact@grantjenks.com"},
 ]
-readme = "README.rst"
 requires-python = ">=3.7"
 keywords = ["search", "typesense"]
 license = {"text" = "Apache 2.0"}
@@ -19,16 +18,13 @@ classifiers = [
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
 ]
-dynamic = ["version"]
+version = '1'
 
 [project.urls]
 Documentation = "https://grantjenks.com/docs/python-typesense-server-wrapper/"
 Funding = "https://gum.co/python-typesense-server-wrapper"
 Source = "https://github.com/grantjenks/python-typesense-server-wrapper"
 Tracker = "https://github.com/grantjenks/python-typesense-server-wrapper/issues"
-
-[tool.setuptools.dynamic]
-version = {attr = "typesense_server_wrapper.__version__"}
 
 [tool.setuptools.packages.find]
 where = ["src"]

@@ -5,10 +5,13 @@
 
 env*/
 
-src/*.egg-info/
-src/typesense_server/typesense-server
+*.egg-info/
+typesense-server
+typesense-server.bin.00
+typesense-server.bin.00
 
 docs/_build/
 
 data/
 dist/
+build/
