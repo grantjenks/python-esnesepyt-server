@@ -1,4 +1,4 @@
-"""Typesense Server
+"""Typesense Server Wrapper
 """
 
 import contextlib
