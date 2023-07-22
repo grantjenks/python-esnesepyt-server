@@ -28,16 +28,8 @@ jobs:
       with:
         python-version: '3.11'
 
-    - name: Install dependencies
-      run: |
-        pip install --upgrade pip
-        pip install -r requirements-dev.txt
-
-    - name: Create build
-      run: python -m build
-
-    - name: Publish package distributions to PyPI
-      uses: pypa/gh-action-pypi-publish@release/v1
+    - name: Install build
+      run: pip install build
 
     - name: Create build
       run: cd chunk1 && python -m build
@@ -54,3 +46,9 @@ jobs:
       uses: pypa/gh-action-pypi-publish@release/v1
       with:
         packages-dir: chunk2/dist/
+
+    - name: Create build
+      run: python -m build
+
+    - name: Publish package distributions to PyPI
+      uses: pypa/gh-action-pypi-publish@release/v1
