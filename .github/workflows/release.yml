@@ -14,14 +14,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - run: wget https://dl.typesense.org/releases/0.24.1/typesense-server-0.24.1-linux-amd64.tar.gz
-    - run: tar -xzf typesense-server-0.24.1-linux-amd64.tar.gz
-    - run: split -d -n 2 typesense-server typesense-server.bin.
-    - run: split -d -n 2 typesense-server typesense-server.bin.
-    - run: mkdir -p chunk1/src/typesense_server_wrapper
-    - run: mv typesense-server.bin.00 chunk1/src/typesense_server_wrapper/
-    - run: mkdir -p chunk2/src/typesense_server_wrapper
-    - run: mv typesense-server.bin.01 chunk2/src/typesense_server_wrapper/
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -30,22 +22,6 @@ jobs:
 
     - name: Install build
       run: pip install build
-
-    - name: Create build
-      run: cd chunk1 && python -m build
-
-    - name: Publish package distributions to PyPI
-      uses: pypa/gh-action-pypi-publish@release/v1
-      with:
-        packages-dir: chunk1/dist/
-
-    - name: Create build
-      run: cd chunk2 && python -m build
-
-    - name: Publish package distributions to PyPI
-      uses: pypa/gh-action-pypi-publish@release/v1
-      with:
-        packages-dir: chunk2/dist/
 
     - name: Create build
       run: python -m build
